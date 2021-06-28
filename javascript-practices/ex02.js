@@ -73,4 +73,6 @@ console.log(s + s2);
 // 임시 Wrapper객체가 만들어 져서 메서드 호출이 일어난 뒤 사라진다. 
 console.log("====원시타입도 메소드 호출이 가능하다. =====================")
 console.log(b.valueOf());
-console.log(b2.valueOf());
+console.log(b2.valueOf());`
+
+`
