@@ -12,6 +12,10 @@
 // Boolean(),
 // String(), Object(), Array().... 내장 객체(생성자 함수)
 // 그리고 사용자 정의 생성자 함수
+
+
+
+
 var o1 = new Object();
 o1.name = "둘리";
 o1.age = 10;
@@ -31,6 +35,7 @@ o2.another.name = "마이콜";
 o2.another.age = 30;
 
 console.log(o2);
+
 
 
 
