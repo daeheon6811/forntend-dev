@@ -1,26 +1,25 @@
+  
 <!DOCTYPE html>
 <html>
 <head>
 <meta charset="UTF-8">
 <title>Insert title here</title>
-<script src="browser-detect.js"></script>
 <script>
 window.addEventListener("load", function(){
-	 
 	const imgElement = document.createElement("img");
-	imgElement.src ="https://www.naver.com"
-	imgElement.s
+	imgElement.src = "https://image.ajunews.com/content/image/2020/06/28/20200628101057562394.jpg";
 	imgElement.style.width = "200px";
-
-	
-	const h1Element = document.createElement("img");
-	const textNode = document.createTextNode("Hello Doc");
-	h1Element.append(textNode);
-	
-})
+	imgElement.alt = "둘리";
+	imgElement.title = "둘리";
+	imgElement["data-no"] = 10; // 비표준 속성
+		
+	setTimeout(function(){
+		document.body.appendChild(imgElement);
+	}, 3000);
+});
 </script>
 </head>
 <body>
-	<h1>HTMLElement(DOM Tree Node) (Browser Object Model)</h1>
+	<h1>HTMLElement(DOM Tree Node) 속성 조작하기</h1>
 </body>
 </html>
