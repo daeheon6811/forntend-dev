@@ -1,0 +1,22 @@
+﻿<!DOCTYPE html>
+<html>
+<head>
+<meta charset="UTF-8">
+<title>Insert title here</title>
+<script type="text/javascript" src="jquery/jquery-3.6.0.js"></script>
+<script>
+$(function(){
+	setTimeout(function(){
+		$("#p1").prepend("<strong>카타파하</string>");
+		$("#p2").text("");
+		console.log($("#p1").text());
+		console.log($("#p2").text());
+	}, 2000);
+});
+</script>
+</head>
+<body>
+	<p id="p1">내용입니다</p>
+
+</body>
+</html>
