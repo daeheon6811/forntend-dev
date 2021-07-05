@@ -7,7 +7,9 @@
 <script>
 $(function(){
 	setTimeout(function(){
-		$("p1").text("안녕하세요");
+		$("#p1").text("안녕하세요");
+		$("#p2").text("<strong> 안녕하세요 </strong>");
+		console.log($("#p3").text())
 	}, 2000);
 });
 </script>
@@ -17,6 +19,18 @@ $(function(){
     <p id = "p1"></p>
 	<p id ="p2"></p>
 	<p id = "p3"></p>
-	<p id = "p4"></p>
+	<p id = "p4">\</p>
+<!--
+    HTML 의 escape 문자
+    & -> &amp;
+    space -> $nbsp;
+    <    -> &it;
+    >    -> &gt;
+    '    -> &quot;
+
+-->
+   <h2>React & Vue</h2>
+	<h2>React &nbsp;&nbsp;&nbsp;&nbsp;&nbsp; Vue</h2>
+
 </body>
 </html>
