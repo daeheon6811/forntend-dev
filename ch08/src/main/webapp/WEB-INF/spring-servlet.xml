@@ -16,6 +16,8 @@
 	<mvc:annotation-driven>
 		<!-- Validator, conversionService, messageConverter를 자동으로 등록 -->
 		<mvc:message-converters>
+		     
+		   <!--  html(text) message conveter -->
 			<bean
 				class="org.springframework.http.converter.StringHttpMessageConverter">
 				<property name="supportedMediaTypes">
@@ -24,6 +26,7 @@
 					</list>
 				</property>
 			</bean>
+			<!-- json message conveter -->
 			<bean
 				class="org.springframework.http.converter.json.MappingJackson2HttpMessageConverter">
 				<property name="supportedMediaTypes">
@@ -32,6 +35,30 @@
 					</list>
 				</property>
 			</bean>
+			<!--  xml message conveter -->
+			
+			<!--  
+			1.  Mashalling(마살링)
+			 : 데이터(Object)를 xml형태로 만드는 것
+			2 .UnMashalling(언마살링)
+			 : xml 데이터를 특정 데이터(Object) 형태로 만드는 것
+			3. 하는 방법
+			      3-1. OXM(Object Xml Mapping)
+			           : XML 데이터와 객체를 매핑
+			           : MarshallingHttpMessageConveter 사용
+			           JAXB(java Architecture Xml Bindnig)
+			           : OXM를 쉽게 도와주는 Tool
+			           : 마살링/언마살링을 JAXBAnnotation 사용하기 쉽고 직관적으로 맵핑할 수 있다.
+			           
+			 
+			 
+			 
+			-->
+			<bean class ="org.springframework.http.converter.xml.Jaxb2RootElementHttpMessageConverter">
+			
+			</bean>
+			
+			
 		</mvc:message-converters>
 	
 	</mvc:annotation-driven>
@@ -40,7 +67,15 @@
 	<mvc:default-servlet-handler />
 
 
-	
+	<!-- ViewResolver 설정 -->
+	<bean id="viewResolver"
+		class="org.springframework.web.servlet.view.InternalResourceViewResolver">
+		<property name="viewClass"
+			value="org.springframework.web.servlet.view.JstlView" />
+		<property name="prefix" value="/WEB-INF/views/" />
+		<property name="suffix" value=".jsp" />
+		<property name="order" value="1" />
+	</bean>
 	
 
 
